@@ -4,7 +4,7 @@ Hello, this is my personal starter template for creating node.js libraries.
 
 Features Include:
 - MIT License
-- Configured for perfectly working dual ESM and CJS output without the use of a bundler!
+- Configured for ESM only output
 - editorconfig
 - linting with xo (space configuration)
 - formatting with prettier and xo
