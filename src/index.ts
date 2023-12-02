@@ -1,6 +1,6 @@
 
 export function helloWorld() {
-	console.log(`Hello World! 🌎
+  console.log(`Hello World! 🌎
 
 This is a generic but opinionated starter template for a TypeScript project built on Node.js
 
