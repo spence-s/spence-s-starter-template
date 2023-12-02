@@ -1,0 +1,43 @@
+{
+  "name": "spence-s-starter-template",
+  "version": "0.0.0",
+  "description": "An awesome opinionated starter template for new projects!",
+  "license": "MIT",
+  "author": {
+    "name": "Spencer Snyder",
+    "email": "sasnyde2@gmail.com",
+    "url": "https://spencersnyder.io"
+  },
+  "type": "module",
+  "main": "dist/src/index.js",
+  "source": "./src/app/client/main.ts",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc --project tsconfig.json",
+    "clean": "rm -rf dist",
+    "dev": "NODE_NO_WARNINGS=1 node --loader ts-node/esm/transpile-only ./src/index.ts",
+    "lint": "xo",
+    "prepare": "husky install",
+    "test": "ava",
+    "watch": "npm run clean && tsc --project tsconfig.json --watch"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-packagejson"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "ava": "^5.3.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "ncu": "latest",
+    "npm-package-json-lint": "^7.1.0",
+    "npm-package-json-lint-config-default": "^6.0.0",
+    "prettier-plugin-packagejson": "^2.4.6",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "xo": "^0.56.0"
+  }
+}
