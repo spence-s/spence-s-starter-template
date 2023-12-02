@@ -1,0 +1,11 @@
+{
+  "ignores": ["test/temp", "coverage"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "capitalized-comments": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "ava/no-ignored-test-files": "off"
+  }
+}
