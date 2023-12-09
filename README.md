@@ -27,7 +27,7 @@ Once you've cloned the template for a new repository, the first thing you want t
 
 ### Run the hello world
 
-This start is already set up to run typescript code out of the box via ts-nodes experimental loader.
+This starter-template is already set up to run typescript code out of the box via ts-node's experimental loader.
 
 `npm run dev`
 
