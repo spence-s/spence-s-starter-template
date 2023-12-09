@@ -16,7 +16,10 @@
     /** Just commenting here for symmetry - RTFM */
     "rootDir": ".",
     /** Skip unneeded typechecking of node-modules */
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    /** Build stuffs */
+    "sourceMap": true,
+    "declaration": true
   },
   "exclude": ["node_modules", "dist"],
   "include": ["src/**/*"]

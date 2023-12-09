@@ -9,6 +9,18 @@
     "url": "https://spencersnyder.io"
   },
   "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
   "main": "dist/src/index.js",
   "source": "./src/app/client/main.ts",
   "types": "dist/src/index.d.ts",
@@ -18,10 +30,12 @@
     "check": "tsc --project ./jsconfig.json",
     "clean": "rimraf dist",
     "dev": "NODE_NO_WARNINGS=1 node --loader ts-node/esm/transpile-only ./src/index.ts",
+    "dev:watch": "NODE_NO_WARNINGS=1 node --watch --loader ts-node/esm/transpile-only ./src/index.ts",
     "lint": "xo",
     "prepare": "husky install",
     "test": "ava",
-    "test:watch": "ava --watch"
+    "test:watch": "ava --watch",
+    "update": "ncu -i"
   },
   "prettier": {
     "plugins": [
@@ -46,16 +60,16 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
-    "ava": "^5.3.1",
+    "ava": "^6.0.1",
     "husky": "^8.0.3",
-    "lint-staged": "^15.1.0",
-    "ncu": "latest",
+    "lint-staged": "^15.2.0",
+    "npm-check-updates": "latest",
     "npm-package-json-lint": "^7.1.0",
     "npm-package-json-lint-config-default": "^6.0.0",
     "prettier": "^3.1.0",
-    "prettier-plugin-packagejson": "^2.4.6",
+    "prettier-plugin-packagejson": "^2.4.7",
     "rimraf": "^5.0.5",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "xo": "^0.56.0"
   }
 }
