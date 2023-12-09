@@ -14,15 +14,10 @@
       "import": {
         "types": "./dist/src/index.d.ts",
         "default": "./dist/src/index.js"
-      },
-      "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.js"
       }
     }
   },
   "main": "dist/src/index.js",
-  "source": "./src/app/client/main.ts",
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc --project tsconfig.json",
@@ -64,6 +59,7 @@
     "ava": "^6.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
+    "np": "^9.2.0",
     "npm-check-updates": "latest",
     "npm-package-json-lint": "^7.1.0",
     "npm-package-json-lint-config-default": "^6.0.0",
