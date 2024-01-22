@@ -7,7 +7,6 @@
   "space": true,
   "rules": {
     "capitalized-comments": "off",
-    "@typescript-eslint/naming-convention": "off",
-    "ava/no-ignored-test-files": "off"
+    "@typescript-eslint/naming-convention": "off"
   }
 }

@@ -7,7 +7,7 @@ Features Include:
 - Configured for ESM only output
 - ts-node and built in watch for easy, out-of-the box development
 - editorconfig
-- testing with ava - pre-setup for typescript ESM
+- testing with node's native test runner - pre-setup for typescript ESM
 - linting with xo (space configuration)
 - formatting with prettier and xo
 - markdown linting and formatting with prettier
