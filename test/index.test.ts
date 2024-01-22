@@ -1,6 +1,7 @@
-import test from 'ava';
+import test from 'node:test';
+import assert from 'node:assert';
 import {helloWorld} from '../src/index.ts';
 
-test('helloWorld is a function', t => {
-  t.is(typeof helloWorld, 'function');
+await test('helloWorld is a function', t => {
+  assert.equal(typeof helloWorld, 'function');
 });

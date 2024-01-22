@@ -24,13 +24,13 @@
     "build:watch": "npm run clean && tsc --project tsconfig.json --watch",
     "check": "tsc --project ./tsconfig.json",
     "clean": "rimraf dist",
-    "dev": "NODE_NO_WARNINGS=1 node --loader ts-node/esm/transpile-only ./src/index.ts",
-    "dev:watch": "NODE_NO_WARNINGS=1 node --watch --loader ts-node/esm/transpile-only ./src/index.ts",
+    "dev": "NODE_NO_WARNINGS=1 node --import tsx/esm ./src/index.ts",
+    "dev:watch": "NODE_NO_WARNINGS=1 node --watch --import tsx/esm ./src/index.ts",
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepare": "husky install",
-    "test": "ava",
-    "test:watch": "ava --watch",
+    "test": "NODE_NO_WARNINGS=1 node --test --import tsx/esm ./test/index.test.ts | tap-mocha-reporter spec",
+    "test:watch": "NODE_NO_WARNINGS=1 node --test --watch --import tsx/esm ./test/index.test.ts | tap-mocha-reporter spec",
     "update": "ncu -i"
   },
   "prettier": {
@@ -38,35 +38,21 @@
       "prettier-plugin-packagejson"
     ]
   },
-  "ava": {
-    "extensions": {
-      "ts": "module"
-    },
-    "files": [
-      "test/**",
-      "!test/fixtures/**",
-      "!test/helpers/**"
-    ],
-    "nodeArguments": [
-      "--loader=ts-node/esm/transpile-only",
-      "--no-warnings"
-    ],
-    "verbose": true
-  },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
-    "ava": "^6.0.1",
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "c8": "^9.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "np": "^9.2.0",
     "npm-check-updates": "latest",
     "npm-package-json-lint": "^7.1.0",
     "npm-package-json-lint-config-default": "^6.0.0",
-    "prettier": "^3.1.0",
-    "prettier-plugin-packagejson": "^2.4.7",
+    "prettier": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.4.9",
     "rimraf": "^5.0.5",
-    "ts-node": "^10.9.2",
+    "tap-mocha-reporter": "^5.0.4",
+    "tsx": "^4.7.0",
     "xo": "^0.56.0"
   }
 }
