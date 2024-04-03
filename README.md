@@ -5,13 +5,14 @@ Hello, this is my personal, bleeding edge, starter template for creating node.js
 Features Include:
 - MIT License
 - Configured for ESM only output
-- ts-node and built in watch for easy, out-of-the box development
+- tsx is built in for easy, out-of-the box development
 - editorconfig
 - testing with node's native test runner - pre-setup for typescript ESM
 - linting with xo (space configuration)
 - formatting with prettier and xo
 - markdown linting and formatting with prettier
 - package.json linting and formatting with prettier-plugin-package-json and npm-package-json-lint
+- np for publishing to npm
 
 ## Getting starting
 
