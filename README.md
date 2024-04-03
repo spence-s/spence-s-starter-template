@@ -8,6 +8,7 @@ Features Include:
 - tsx is built in for easy, out-of-the box development
 - editorconfig
 - testing with node's native test runner - pre-setup for typescript ESM
+- tests run on push to main in github actions
 - linting with xo (space configuration)
 - formatting with prettier and xo
 - markdown linting and formatting with prettier
