@@ -49,3 +49,8 @@ For a nodemon like experience, we leverage the new nodejs experimental `watch` f
 
 `npm run dev:watch` to start in watch mode.
 
+### Releasing
+
+To encourage best practices for publishing an open source package on npm, [np is installed by default](https://github.com/sindresorhus/np).
+
+`npm run release`
