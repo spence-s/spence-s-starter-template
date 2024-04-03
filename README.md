@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml/badge.svg?branch=main&event=push)](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml)
+
 # spence-s-starter-template
 
 Hello, this is my personal, bleeding edge, starter template for creating node.js libraries.
