@@ -3,7 +3,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "pretter": true,
+  "prettier": true,
   "space": true,
   "rules": {
     "capitalized-comments": "off",
