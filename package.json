@@ -1,7 +1,7 @@
 {
   "name": "spence-s-starter-template",
   "version": "0.0.0",
-  "description": "An awesome opinionated starter template for new projects!",
+  "description": "An opinionated typescript + ESM starter template for new projects.",
   "license": "MIT",
   "author": {
     "name": "Spencer Snyder",
@@ -30,6 +30,7 @@
     "lint:fix": "xo --fix",
     "prepare": "husky",
     "release": "np",
+    "start": "node dist/src/index.js",
     "test": "NODE_NO_WARNINGS=1 node --test --import tsx/esm ./test/index.test.ts",
     "test:watch": "NODE_NO_WARNINGS=1 node --test --watch --import tsx/esm ./test/index.test.ts",
     "update": "ncu -i"
