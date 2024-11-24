@@ -40,6 +40,7 @@
     "release": "np",
     "start": "node dist/src/index.js",
     "test": "node --test --import tsx/esm ./test/index.test.ts",
+    "test:coverage": "node --test --experimental-test-coverage --import tsx/esm ./test/index.test.ts",
     "test:watch": "node --test --watch --import tsx/esm ./test/index.test.ts",
     "update": "ncu -i"
   },
