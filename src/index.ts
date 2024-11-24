@@ -12,5 +12,3 @@ To get started:
 5) run 'npm run test' to run the tests in 'src/index.test.ts'
 `);
 }
-
-helloWorld();
