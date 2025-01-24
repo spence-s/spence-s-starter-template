@@ -7,7 +7,7 @@ await test('helloWorld is a function', (t) => {
 });
 
 await test('helloWorld logs a string', (t) => {
-  const mockLog = t.mock.method(global.console, 'log');
+  const mockLog = t.mock.method(globalThis.console, 'log');
   helloWorld();
   assert.equal(mockLog.mock.calls.length, 1);
   assert.equal(mockLog.mock.calls[0].arguments.length, 1);
