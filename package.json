@@ -28,20 +28,16 @@
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
-    "build": "npm run clean && tsc --project tsconfig.build.json",
-    "build:watch": "npm run clean && tsc --project tsconfig.build.json --watch",
-    "check": "tsc --project ./tsconfig.json",
-    "clean": "rimraf dist",
-    "dev": "node --enable-source-maps --import tsx/esm ./src/index.ts",
-    "dev:watch": "node --enable-source-maps --watch --import tsx/esm ./src/index.ts",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "check": "tsc -p ./tsconfig.json",
+    "dev": "rimraf dist && tsc -p tsconfig.build.json --watch & wait-on ./dist/src/index.js && node --enable-source-maps --watch ./dist/src/index.js",
     "lint": "xo",
-    "lint:fix": "xo --fix",
     "prepare": "husky",
     "release": "np",
     "start": "node dist/src/index.js",
-    "test": "node --test --import tsx/esm ./test/index.test.ts",
-    "test:coverage": "node --test --experimental-test-coverage --import tsx/esm ./test/index.test.ts",
-    "test:watch": "node --test --watch --import tsx/esm ./test/index.test.ts",
+    "test": "rimraf dist && tsc -p tsconfig.json && node --test ./dist/test/index.test.js",
+    "test:coverage": "rimraf dist && tsc -p tsconfig.json && node --test --experimental-test-coverage ./dist/test/index.test.js",
+    "test:watch": "rimraf dist && tsc -p tsconfig.json --watch & wait-on ./dist/test/index.test.js && node --test --watch ./dist/test/index.test.js",
     "update": "ncu -i"
   },
   "prettier": {
@@ -62,8 +58,8 @@
     "prettier": "^3.5.3",
     "prettier-plugin-packagejson": "^2.5.10",
     "rimraf": "^6.0.1",
-    "tsx": "^4.19.3",
-    "xo": "npm:@spence-s/flat-xo@0.2.1"
+    "wait-on": "^8.0.3",
+    "xo": "npm:@spence-s/flat-xo@0.2.2"
   },
   "engines": {
     "node": ">=20"
