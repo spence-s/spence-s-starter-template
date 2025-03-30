@@ -1,4 +1,4 @@
-import {TS_FILES_GLOB, type XoConfigItem} from 'xo';
+import {type XoConfigItem} from 'xo';
 
 const xoConfig: XoConfigItem[] = [
   {ignores: ['test/temp', 'coverage']},
@@ -7,11 +7,6 @@ const xoConfig: XoConfigItem[] = [
     space: true,
     rules: {
       'capitalized-comments': 'off',
-    },
-  },
-  {
-    files: TS_FILES_GLOB,
-    rules: {
       '@typescript-eslint/naming-convention': 'off',
     },
   },
