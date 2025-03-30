@@ -1,21 +1,22 @@
-[![Node.js CI](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml/badge.svg?branch=main&event=push)](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml)
-
 # spence-s-starter-template
+
+[![Node.js CI](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml/badge.svg?branch=main&event=push)](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml)
 
 Hello, this is my personal, bleeding edge, starter template for creating node.js libraries.
 
 Features Include:
+
 - MIT License
 - Configured for ESM only output
-- tsx is built in for easy, out-of-the box development
-- editorconfig
-- testing with node's native test runner - pre-setup for typescript ESM
-- tests run on push to main in github actions
-- linting with xo (space configuration)
-- formatting with prettier and xo
-- markdown linting and formatting with prettier
-- package.json linting and formatting with prettier-plugin-package-json and npm-package-json-lint
-- np for publishing to npm
+- Easy out-of-the box development watch and test mode with only TS
+- Editorconfig
+- Testing with node's native test runner - pre-setup for typescript ESM
+- Tests run on push to main in github actions
+- Linting with xo (space configuration)
+- Formatting with prettier and xo
+- Markdown linting and formatting with prettier
+- Package.json linting and formatting with prettier-plugin-package-json and npm-package-json-lint
+- Np for publishing to npm
 
 ## Getting starting
 
