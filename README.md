@@ -2,21 +2,21 @@
 
 [![Node.js CI](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml/badge.svg?branch=main&event=push)](https://github.com/spence-s/spence-s-starter-template/actions/workflows/node.js.yml)
 
-Hello, this is my personal, bleeding edge, starter template for creating node.js libraries.
+A bleeding edge, prod ready starter template for creating and publishing [Node.js](https://nodejs.org) libraries to [npm](https://www.npmjs.com/).
 
 Features Include:
 
 - MIT License
-- Configured for ESM only output
-- Easy out-of-the box development watch and test mode with only TS
-- Editorconfig
-- Testing with node's native test runner - pre-setup for typescript ESM
-- Tests run on push to main in github actions
-- Linting with xo (space configuration)
-- Formatting with prettier and xo
-- Markdown linting and formatting with prettier
-- Package.json linting and formatting with prettier-plugin-package-json and npm-package-json-lint
-- Np for publishing to npm
+- Configured for [pure ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) output
+- Easy out-of-the box development with [watch](https://nodejs.org/api/cli.html#--watch) and test mode with only [TypeScript](https://www.typescriptlang.org/)
+- [Editorconfig](https://editorconfig.org/) for collaboration
+- Testing with [node's native test runner](https://nodejs.org/api/test.html) - pre-setup for typescript ESM
+- CI runs on push to main in [github actions](https://github.com/features/actions)
+- Linting with [xo](https://github.com/xojs/xo) (space configuration)
+- Formatting with [prettier](https://prettier.io/) and [xo](https://github.com/xojs/xo)
+- Markdown linting and formatting with [prettier](https://prettier.io/)
+- Package.json linting and formatting with [prettier-plugin-package-json](https://www.npmjs.com/package/prettier-plugin-packagejson)
+- [np](https://github.com/sindresorhus/np) for publishing to npm
 
 ## Getting starting
 
@@ -44,11 +44,17 @@ Will compile the `src/index.ts` in memory and execute it.
 
 ### Developing
 
-`npm run dev` will build the project in memory and execute the script.
+`npm run dev` will build the project with `tsc --watch` execute the script with the new nodejs `watch` flag.
 
-For a nodemon like experience, we leverage the new nodejs experimental `watch` flag.
+### Testing
 
-`npm run dev:watch` to start in watch mode.
+`npm run test` will build the project and run the tests once
+`npm run test:coverage` will build the project once and run the tests once with node experimental test coverage flags.
+`npm run test:watch` will build the project in watch mode, and re-run the tests anytime something changes.
+
+### Updating dependencies
+
+`npm run update` will use `ncu -i` to update all dependencies to their latest versions, interactively
 
 ### Releasing
 
