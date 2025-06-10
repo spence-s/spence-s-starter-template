@@ -54,10 +54,10 @@
     "np": "^10.2.0",
     "npm-check-updates": "latest",
     "prettier": "^3.5.3",
-    "prettier-plugin-packagejson": "^2.5.14",
+    "prettier-plugin-packagejson": "^2.5.15",
     "rimraf": "^6.0.1",
     "wait-on": "^8.0.3",
-    "xo": "^1.0.0"
+    "xo": "^1.1.0"
   },
   "engines": {
     "node": ">=20"
