@@ -5,31 +5,39 @@
  */
 {
   "compilerOptions": {
-    /** Tells TS to use either cjs or esm modules based on package.json */
-    "module": "Node16",
+    /** BUILD */
+    "rootDir": ".",
     /** Build to the dist foler in the root dir */
     "outDir": "dist",
+    /** Build stuffs - source maps and ts definitions for our library */
+    "sourceMap": true,
+    "declaration": true,
+
+    /** MODULES
+    /** Tells TS to use either cjs or esm modules based on package.json */
+    "module": "Node16",
     /** Use the latest version of ECMAScript */
     "target": "ES2022",
     /** Use the latest version of ECMAScript modules */
     "lib": ["esnext"],
     /** For nodejs libs, for browser or other environments, this will change */
     "types": ["node"],
+
+    /** TYPECHECKING */
     /** Because we care about types being as strict as possible */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-    /** Just commenting here for symmetry - RTFM */
-    "rootDir": ".",
+
+    /** OPTIMIZATION */
     /** Skip unneeded typechecking of node-modules */
     "skipLibCheck": true,
-    /** Build stuffs - source maps and ts definitions for our library */
-    "sourceMap": true,
-    "declaration": true,
     /** ensure we use type imports properly - also validated and autofixed by xo */
     "verbatimModuleSyntax": true,
-    /** Help ts know that we are only using modules*/
-    "moduleDetection": "force"
+    /** Help ts know that we are only using modules (may need to change for cjs) */
+    "moduleDetection": "force",
+    /** Show the entire type in intellisense if possible */
+    "noErrorTruncation": true
   },
   "exclude": ["node_modules", "dist"]
 }
