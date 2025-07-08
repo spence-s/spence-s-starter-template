@@ -11,15 +11,21 @@
     "outDir": "dist",
     /** Use the latest version of ECMAScript */
     "target": "ES2022",
-    /** Because we care about types */
+    /** Because we care about types being as strict as possible */
     "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
     /** Just commenting here for symmetry - RTFM */
     "rootDir": ".",
     /** Skip unneeded typechecking of node-modules */
     "skipLibCheck": true,
-    /** Build stuffs */
+    /** Build stuffs - source maps and ts definitions for our library */
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    /** ensure we use type imports properly - also validated and autofixed by xo */
+    "verbatimModuleSyntax": true,
+    /** Help ts know that we are only using modules*/
+    "moduleDetection": "force"
   },
   "exclude": ["node_modules", "dist"]
 }
