@@ -11,6 +11,10 @@
     "outDir": "dist",
     /** Use the latest version of ECMAScript */
     "target": "ES2022",
+    /** Use the latest version of ECMAScript modules */
+    "lib": ["esnext"],
+    /** For nodejs libs, for browser or other environments, this will change */
+    "types": ["node"],
     /** Because we care about types being as strict as possible */
     "strict": true,
     "noUncheckedIndexedAccess": true,
