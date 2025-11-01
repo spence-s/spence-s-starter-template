@@ -8,14 +8,15 @@ Features Include:
 
 - MIT License
 - Configured for [pure ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) output
-- Easy out-of-the box development with [watch](https://nodejs.org/api/cli.html#--watch) and test mode with only [TypeScript](https://www.typescriptlang.org/)
+- Easy out-of-the box development with [watch](https://nodejs.org/api/cli.html#--watch) and [native type stripping](https://nodejs.org/docs/latest/api/typescript.html#modules-typescript)
 - [Editorconfig](https://editorconfig.org/) for collaboration
-- Testing with [node's native test runner](https://nodejs.org/api/test.html) - pre-setup for typescript ESM
+- Testing with [node's native test runner](https://nodejs.org/api/test.html) - pre-setup for typescript ESM and TypeScript
 - CI runs on push to main in [github actions](https://github.com/features/actions)
 - Linting with [xo](https://github.com/xojs/xo) (space configuration)
 - Formatting with [prettier](https://prettier.io/) and [xo](https://github.com/xojs/xo)
 - Markdown linting and formatting with [prettier](https://prettier.io/)
 - Package.json linting and formatting with [prettier-plugin-package-json](https://www.npmjs.com/package/prettier-plugin-packagejson)
+- Sane package.json scripts
 - [np](https://github.com/sindresorhus/np) for publishing to npm
 
 ## Getting starting
@@ -32,11 +33,9 @@ Once you've cloned the template for a new repository, the first thing you want t
 
 ### Run the hello world
 
-This starter-template is already set up to run typescript code out of the box with `tsc` and `node --watch` in parallel.
+This starter-template is already set up to run typescript code out of the box node native type stripping and node native watch mode.
 
 `npm run dev`
-
-Will compile the `src/index.ts` in memory and execute it.
 
 ### Building the project
 
@@ -48,9 +47,9 @@ Will compile the `src/index.ts` in memory and execute it.
 
 ### Testing
 
-`npm run test` will build the project and run the tests once
-`npm run test:coverage` will build the project once and run the tests once with node experimental test coverage flags.
-`npm run test:watch` will build the project in watch mode, and re-run the tests anytime something changes.
+`npm run test` run the tests once with node native type stripping.
+`npm run test:coverage` run the tests once with native type stripping node experimental test coverage flags.
+`npm run test:watch` run the tests in native watch mode with native type stripping.
 
 ### Updating dependencies
 
@@ -61,3 +60,43 @@ Will compile the `src/index.ts` in memory and execute it.
 To encourage best practices for publishing an open source package on npm, [np is installed by default](https://github.com/sindresorhus/np).
 
 `npm run release`
+
+## Scripts
+
+```json
+{
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "check": "tsc -p tsconfig.json",
+    "dev": "node --watch src/index.ts",
+    "lint": "npm run check && xo",
+    "prepare": "husky",
+    "release": "np",
+    "start": "node dist/src/index.js",
+    "test": "npm run lint && node --test",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "test:watch": "node --test --watch",
+    "update": "ncu -i"
+  }
+}
+```
+
+`build`: Builds the project into a dist directory for releasing to npm as `js` files complete with type defintions and source maps.
+`check`: Check the types without building the project.
+`dev`: Run the program in watch mode.
+`lint`: Run the linter and type checker.
+`prepare`: Run the husky prepare script so husky is installed with deps.
+`release`: Use `np` to release the package to npm.
+`start`: Run the build js files from the `build` script.
+`test`: Run tests with node native test runner.
+`test:watch`: Run tests in watch mode.
+`update`: Update deps interactively to their latest versions.
+
+## TypeScript
+
+The tsconfig included in this template is set up for Node.JS native type stripping and includes the `erasableSyntaxOnly` option, so not all TypeScript features are supported.This decision was made to encourage adoption of cutting edge Node.JS features which improve DX. We continue to maintain a build and release option for packaging only `JavaScript` files, as node native type stripping will not strip imports from `node_modules` folders.
+
+Learn More:
+
+- [TypeScript Modules](https://nodejs.org/api/typescript.html)
+- [Erasable Syntax Only Reference](https://www.typescriptlang.org/tsconfig/#erasableSyntaxOnly)
