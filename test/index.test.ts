@@ -2,7 +2,7 @@ import {test, describe} from 'node:test';
 import assert from 'node:assert';
 import {helloWorld} from '../src/index.ts';
 
-await describe('helloWorld', async () => {
+void describe('helloWorld', async () => {
   await test('helloWorld is a function', (t) => {
     assert.equal(typeof helloWorld, 'function');
   });
