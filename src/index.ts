@@ -1,5 +1,3 @@
-import type {Test} from './test.ts';
-
 export function helloWorld() {
   console.log(`Hello World! 🌎
 
