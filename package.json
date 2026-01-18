@@ -55,7 +55,7 @@
     "np": "^10.2.0",
     "npm-check-updates": "latest",
     "prettier": "^3.7.4",
-    "prettier-plugin-packagejson": "^2.5.20",
+    "prettier-plugin-packagejson": "^2.5.22",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
     "xo": "^1.2.3"
