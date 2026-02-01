@@ -46,7 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.3.1",
+    "@commitlint/cli": "^20.4.0",
     "@commitlint/config-conventional": "^20.3.1",
     "@types/node": "^25.0.9",
     "c8": "^10.1.3",
