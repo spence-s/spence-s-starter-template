@@ -69,7 +69,7 @@ This starter-template is already set up to run typescript code out of the box no
 
 ### Developing
 
-`npm run dev` will build the project with `tsc --watch` execute the script with the new nodejs `watch` flag.
+`npm run dev` runs `node --watch src/index.ts` so your TypeScript entrypoint restarts automatically on file changes.
 
 ### Testing
 
@@ -95,11 +95,11 @@ To encourage best practices for publishing an open source package on npm, [np is
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "check": "tsc -p tsconfig.json",
     "dev": "node --watch src/index.ts",
-    "lint": "npm run check && xo",
+    "lint": "xo",
     "prepare": "husky",
     "release": "np",
     "start": "node dist/src/index.js",
-    "test": "npm run lint && node --test",
+    "test": "node --test",
     "test:coverage": "node --test --experimental-test-coverage",
     "test:watch": "node --test --watch",
     "update": "ncu -i"
@@ -110,7 +110,7 @@ To encourage best practices for publishing an open source package on npm, [np is
 `build`: Builds the project into a dist directory for releasing to npm as `js` files complete with type defintions and source maps.
 `check`: Check the types without building the project.
 `dev`: Run the program in watch mode.
-`lint`: Run the linter (xo) and type checker. Note: The `test` script runs tests only; run `lint` separately if needed.
+`lint`: Run the linter (xo).
 `prepare`: Run the husky prepare script so husky is installed with deps.
 `release`: Use `np` to release the package to npm.
 `start`: Run the build js files from the `build` script.
@@ -118,6 +118,8 @@ To encourage best practices for publishing an open source package on npm, [np is
 `test:coverage`: Run tests with node native test coverage.
 `test:watch`: Run tests in watch mode.
 `update`: Update deps interactively to their latest versions.
+
+Suggested local quality gate before commits: run `npm run check && npm run lint && npm test`.
 
 ## Contributing
 

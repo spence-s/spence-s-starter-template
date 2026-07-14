@@ -7,7 +7,7 @@ This document provides essential information for AI coding agents working in thi
 This is an opinionated TypeScript + ESM starter template for Node.js libraries. The project uses:
 
 - **Pure ESM** (ECMAScript Modules) - no CommonJS
-- **Node.js >=24** with native TypeScript type stripping
+- **Node.js >=22** with native TypeScript type stripping
 - **XO** for linting and formatting
 - **Node.js native test runner** for testing
 
@@ -20,7 +20,7 @@ This is an opinionated TypeScript + ESM starter template for Node.js libraries. 
 
 ### Testing
 
-- `npm test` - Run all tests once (includes linting)
+- `npm test` - Run all tests once
 - `npm run test:coverage` - Run tests with coverage report
 - `npm run test:watch` - Run tests in watch mode
 
@@ -39,7 +39,8 @@ node --test --watch test/index.test.ts
 
 ### Linting & Formatting
 
-- linting: `npm run lint` - Run XO linter and type checker
+- linting: `npm run lint` - Run XO linter
+- type-checking: `npm run check` - Run TypeScript type checker
 - formatting: `npm run lint -- ---fix` XO is also the formatter (auto-formats on fix)
 
 ### Development
@@ -62,7 +63,7 @@ node --test --watch test/index.test.ts
 - **Pure ESM only** - `"type": "module"` in package.json
 - Use `import`/`export`, never `require()`
 - Module setting: `"module": "node20"` (adapts based on package.json type field)
-- Target: ES2024
+- Target: ES2023
 
 #### Strict Type Checking
 
