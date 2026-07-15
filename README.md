@@ -14,8 +14,8 @@ Features Include:
 - Configured for [pure ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) output
 - Easy out-of-the box development with [watch](https://nodejs.org/api/cli.html#--watch) and [native type stripping](https://nodejs.org/docs/latest/api/typescript.html#modules-typescript)
 - [Editorconfig](https://editorconfig.org/) for collaboration
-- Testing with [node's native test runner](https://nodejs.org/api/test.html) - pre-setup for typescript ESM and TypeScript
-- CI runs on Node.js 20, 22, and 24 for pushes and pull requests to main in [github actions](https://github.com/features/actions)
+- Testing with [node's native test runner](https://nodejs.org/api/test.html) - preconfigured for TypeScript + ESM
+- CI runs on Node.js 22, 24, and 26 for pushes and pull requests to main in [github actions](https://github.com/features/actions)
 - Linting with [xo](https://github.com/xojs/xo) (space configuration)
 - Formatting with [prettier](https://prettier.io/) and [xo](https://github.com/xojs/xo)
 - Markdown linting and formatting with [prettier](https://prettier.io/)
@@ -99,9 +99,9 @@ To encourage best practices for publishing an open source package on npm, [np is
     "prepare": "husky",
     "release": "np",
     "start": "node dist/src/index.js",
-    "test": "node --test",
-    "test:coverage": "node --test --experimental-test-coverage",
-    "test:watch": "node --test --watch",
+    "test": "node --test test/**/*.test.ts",
+    "test:coverage": "node --test --experimental-test-coverage test/**/*.test.ts",
+    "test:watch": "node --test --watch test/**/*.test.ts",
     "update": "ncu -i"
   }
 }

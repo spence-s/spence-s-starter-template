@@ -1,7 +1,7 @@
 /**
- * Minimal TypeScript configuration for Node.js
- * - To choose between native ESM or CJS modules, simply change the "type" option in package.json.
- *   ESM is the default option for the spence-s-starter-template, but the tscofig is set up to use commonjs when the package.json field is changed to "type": "commonjs", or removed.
+ * Minimal TypeScript configuration for Node.js libraries
+ * - This template is configured for pure ESM output (`"type": "module"` in package.json).
+ * - `module: "node20"` aligns TypeScript module resolution with modern Node.js ESM behavior.
  */
 {
   "compilerOptions": {
@@ -13,8 +13,8 @@
     "sourceMap": true,
     "declaration": true,
 
-    /** MODULES
-    /** Tells TS to use either cjs or esm modules based on package.json */
+    /** MODULES */
+    /** Align module resolution with Node.js ESM semantics */
     "module": "node20",
     /** Use the latest version of ECMAScript */
     "target": "es2023",

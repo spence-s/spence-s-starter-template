@@ -27,6 +27,9 @@
   },
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "check": "tsc -p tsconfig.json",
@@ -35,9 +38,9 @@
     "prepare": "husky",
     "release": "np",
     "start": "node dist/src/index.js",
-    "test": "node --test",
-    "test:coverage": "node --test --experimental-test-coverage",
-    "test:watch": "node --test --watch",
+    "test": "node --test test/**/*.test.ts",
+    "test:coverage": "node --test --experimental-test-coverage test/**/*.test.ts",
+    "test:watch": "node --test --watch test/**/*.test.ts",
     "update": "ncu -i"
   },
   "prettier": {
@@ -62,8 +65,5 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "files: ": [
-    "dist"
-  ]
+  }
 }
