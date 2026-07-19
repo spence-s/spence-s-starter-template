@@ -54,7 +54,7 @@
     "@types/node": "^26.1.1",
     "c8": "^11.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.8",
+    "lint-staged": "^17.1.0",
     "np": "^11.2.2",
     "npm-check-updates": "latest",
     "prettier": "^3.9.5",
