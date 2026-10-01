@@ -1,6 +1,5 @@
 module.exports = {
-  '*.md,!test/**/*.md': 'prettier --write',
-  './package.json':
-    'prettier --write --plugin=prettier-plugin-packagejson ./package.json',
+  '*.md,!test/**/*.md': 'xo --fix',
+  './package.json': 'xo --fix ./package.json',
   '*.{js,ts}': 'xo --fix',
 };

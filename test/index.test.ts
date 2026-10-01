@@ -14,7 +14,7 @@ void describe('helloWorld', () => {
     const mockLog = t.mock.method(console, 'log');
     helloWorld();
     t.assert.strictEqual(
-      mockLog.mock.calls.length,
+      mockLog.mock.callCount(),
       1,
       'console.log should be called once',
     );
