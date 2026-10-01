@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
-    "check": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
     "dev": "node --watch src/index.ts",
     "lint": "xo",
     "prepare": "husky",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
-    "@types/node": "^26.6.3",
+    "@types/node": "^24.19.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "np": "^12.1.1",

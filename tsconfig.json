@@ -1,47 +1,48 @@
 /**
- * Minimal TypeScript configuration for Node.js libraries
- * - This template is configured for pure ESM output (`"type": "module"` in package.json).
- * - `module: "node20"` aligns TypeScript module resolution with modern Node.js ESM behavior.
+ * Type-checking configuration for a Node.js 24+ library that uses pure ESM
+ * and runs source files through Node's native TypeScript type stripping.
+ * tsconfig.build.json narrows compilation to publishable source files.
  */
 {
   "compilerOptions": {
-    /** BUILD */
+    /** BUILD OUTPUT */
+    /** Preserve the source directory in dist so package exports remain predictable. */
     "rootDir": ".",
-    /** Build to the dist foler in the root dir */
+    /** Write compiled JavaScript, declarations, and source maps to dist. */
     "outDir": "dist",
-    /** Build stuffs - source maps and ts definitions for our library */
+    /** Generate source maps for debugging the published JavaScript. */
     "sourceMap": true,
+    /** Generate type declarations for package consumers. */
     "declaration": true,
 
-    /** MODULES */
-    /** Align module resolution with Node.js ESM semantics */
+    /** MODULES AND RUNTIME */
+    /** Model the stable Node.js module behavior available to the supported runtime. */
     "module": "node20",
-    /** Use the latest version of ECMAScript */
-    "target": "es2023",
-    /** Use the latest version of ECMAScript modules */
-    "lib": ["esnext"],
-    /** For nodejs libs, for browser or other environments, this will change */
+    /** Emit only JavaScript syntax supported by the minimum Node.js version. */
+    "target": "es2024",
+    /** Expose standard library APIs available in the ES2024 runtime baseline. */
+    "lib": ["es2024"],
+    /** Include Node.js globals and built-in module types explicitly. */
     "types": ["node"],
 
-    /** TYPECHECKING */
-    /** Because we care about types being as strict as possible */
+    /** TYPE CHECKING */
+    /** Enable TypeScript's complete family of strict type-checking options. */
     "strict": true,
+    /** Include undefined when an indexed key is not known to exist. */
     "noUncheckedIndexedAccess": true,
+    /** Distinguish an absent optional property from one explicitly set to undefined. */
     "exactOptionalPropertyTypes": true,
-
-    /** OPTIMIZATION */
-    /** Skip unneeded typechecking of node-modules */
+    /** Skip checking dependency declaration internals while still checking their use. */
     "skipLibCheck": true,
-    /** ensure we use type imports properly - also validated and autofixed by xo */
+
+    /** NATIVE TYPESCRIPT */
+    /** Preserve imports as written and require type-only imports to be explicit. */
     "verbatimModuleSyntax": true,
-    /** Allow only syntax that can be erased (no runtime impact) when transpiling to JS */
+    /** Reject TypeScript syntax that Node's native type stripper cannot erase. */
     "erasableSyntaxOnly": true,
-    /** Rewrite relative imports to include file extensions for nodejs */
-    "rewriteRelativeImportExtensions": true,
-    /** Help ts know that we are only using modules (may need to change for cjs) */
-    "moduleDetection": "force",
-    /** Show the entire type in intellisense if possible */
-    "noErrorTruncation": true
+    /** Rewrite relative .ts import extensions to their JavaScript equivalents on build. */
+    "rewriteRelativeImportExtensions": true
   },
+  /** Never type-check installed dependencies or generated build output as project files. */
   "exclude": ["node_modules", "dist"]
 }
