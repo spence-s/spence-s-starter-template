@@ -7,6 +7,7 @@ const xoConfig: XoConfigItem[] = [
     rules: {
       'capitalized-comments': 'off',
       '@typescript-eslint/naming-convention': 'off',
+      'jsdoc/require-asterisk-prefix': ['error', 'always'],
     },
   },
   {
