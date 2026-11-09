@@ -15,6 +15,8 @@ const xoConfig: XoConfigItem[] = [
     rules: {
       // ensure we don't get empty module imports while using verbatim module syntax
       '@typescript-eslint/no-import-type-side-effects': 'error',
+      // extra type safety
+      '@typescript-eslint/no-unsafe-type-assertion': 'error',
       // Enforce using .ts extensions for local imports in TS files
       // for native node.js type stripping support
       'import-x/extensions': [
